@@ -75,8 +75,7 @@ repos:
         entry: pydocstyle
         language: system
         types: [python]
-#      - id: mypy
-#        name: mypy
-#        entry: mypy
-#        language: system
-#        types: [python]
+  - repo: https://github.com/kynan/nbstripout
+    rev: 0.6.0
+    hooks:
+      - id: nbstripout
