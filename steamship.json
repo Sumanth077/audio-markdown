@@ -1,0 +1,14 @@
+{
+  "type": "app",
+  "handle": "audio-markdown",
+  "version": "0.1.0",
+  "public": true,
+  "description": "",
+  "author": "",
+  "entrypoint": "src.api.handler",
+  "build_config": {
+    "ignore": ["tests", "notebooks", "examples"]
+  },
+  "configTemplate": {
+  }
+}
