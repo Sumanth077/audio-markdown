@@ -10,5 +10,20 @@
     "ignore": ["tests", "notebooks", "examples"]
   },
   "configTemplate": {
+  },
+  "steamshipRegistry": {
+    "tagline": "Turn audio files into formatted markdown for your blog or note taking app.",
+    "tagline2": "A simple structured language lets you add headings, bulleted lists, and numbered lists.",
+    "usefulFor": "Useful for developers and plugin authors building audio integrations into their apps.",
+    "videoUrl": "https://youtu.be/84u4B9nNckU",
+    "githubUrl": "https://github.com/steamship-packages/audio-markdown/",
+    "demoUrl": "http://audio-to-markdown.steamship.com/",
+    "blogUrl": null,
+    "jupyterUrl": "https://github.com/steamship-packages/audio-markdown/blob/main/examples/audio-markdown-python-client-demo.ipynb",
+    "authorName": "Steamship",
+    "authorEmail": "hello@steamship.com",
+    "authorTwitter": "@GetSteamship",
+    "authorUrl": "https://www.steamship.com/",
+    "tags": ["Audio", "Markdown", "Blogging", "Whisper", "S2T", "Transcription"]
   }
 }
