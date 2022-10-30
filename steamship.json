@@ -1,7 +1,7 @@
 {
-  "type": "app",
-  "handle": "audio-markdown",
-  "version": "0.1.1",
+  "type": "package",
+  "handle": "chinese-tokenizer",
+  "version": "1.0.3",
   "public": true,
   "description": "",
   "author": "",
@@ -12,18 +12,18 @@
   "configTemplate": {
   },
   "steamshipRegistry": {
-    "tagline": "Turn audio files into formatted markdown for your blog or note taking app.",
-    "tagline2": "A simple structured language lets you add headings, bulleted lists, and numbered lists.",
-    "usefulFor": "Useful for developers and plugin authors building audio integrations into their apps.",
-    "videoUrl": "https://youtu.be/84u4B9nNckU",
-    "githubUrl": "https://github.com/steamship-packages/audio-markdown/",
-    "demoUrl": "http://audio-to-markdown.steamship.com/",
+    "tagline": "Tokenizes Chinese text and adds transliterations and English translation.",
+    "tagline2": "Saves results for quick recall later.",
+    "usefulFor": "Useful for language learning tools building.",
+    "videoUrl": null,
+    "githubUrl": "https://github.com/steamship-packages/chinese-tokenizer/",
+    "demoUrl": null,
     "blogUrl": null,
-    "jupyterUrl": "https://github.com/steamship-packages/audio-markdown/blob/main/examples/audio-markdown-python-client-demo.ipynb",
+    "jupyterUrl": "https://github.com/steamship-packages/audio-markdown/blob/main/examples/chinese-tokenizer-python-client-demo.ipynb",
     "authorName": "Steamship",
     "authorEmail": "hello@steamship.com",
     "authorTwitter": "@GetSteamship",
     "authorUrl": "https://www.steamship.com/",
-    "tags": ["Audio", "Markdown", "Blogging", "Whisper", "S2T", "Transcription"]
+    "tags": ["Chinese", "education", "tokenization", "translation", "CEDict"]
   }
 }

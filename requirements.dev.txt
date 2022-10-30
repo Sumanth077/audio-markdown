@@ -61,7 +61,6 @@ scipy==1.9.2
 six==1.16.0
 snowballstemmer==2.2.0
 stack-data==0.5.1
-steamship==2.1.31
 threadpoolctl==3.1.0
 toml==0.10.2
 tomli==2.0.1
@@ -70,8 +69,6 @@ traitlets==5.5.0
 typer==0.4.2
 typing-inspect==0.8.0
 typing_extensions==4.4.0
-# Editable Git install with no remote (UNKNOWN==0.0.post1.dev0)
--e /Users/dougreid/work/github.com/steamship-packages/audio-markdown
 urllib3==1.26.12
 virtualenv==20.16.5
 wcwidth==0.2.5
