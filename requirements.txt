@@ -1,2 +1,2 @@
-steamship==2.1.31
+steamship===2.2.0b2
 toml

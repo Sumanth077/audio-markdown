@@ -75,7 +75,9 @@ repos:
         entry: pydocstyle
         language: system
         types: [python]
-  - repo: https://github.com/kynan/nbstripout
-    rev: 0.6.0
-    hooks:
-      - id: nbstripout
+      - id: jupyter-nb-clear-output
+        name: jupyter-nb-clear-output
+        files: \.ipynb$
+        stages: [ commit ]
+        language: system
+        entry: jupyter nbconvert --ClearOutputPreprocessor.enabled=True --inplace
