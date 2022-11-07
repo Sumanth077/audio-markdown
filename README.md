@@ -17,30 +17,27 @@ from steamship.base import TaskState
 instance = Steamship.use("audio-markdown", "my-workspace-name")
 
 url = "<url to mp3 file>"
-transcribe_task = instance.post("transcribe_url", url=url).data
+transcribe_task = instance.invoke("transcribe_url", url=url)
 task_id = transcribe_task["task_id"]
 status = transcribe_task["status"]
 
 # Wait for completion
-n_retries = 0
-while n_retries <= 100 and status != TaskState.succeeded:
-    response = instance.post("get_markdown", task_id=task_id)
-
-    if response.task and response.task.state == TaskState.failed:
-        print(f"[FAILED] {response.task.status_message}")
+retries = 0
+while retries <= 100 and status != TaskState.succeeded:
+    response = instance.invoke("get_markdown", task_id=task_id)
+    status = response["status"]
+    if status == TaskState.failed:
+        print(f"[FAILED] {response['status_message']")
         break
 
-    status = response.data["status"]
-
-    print(f"[Try {n_retries}] Transcription is {status}.")
-    if status == "succeeded":
+    print(f"[Try {retries}] Transcription {status}.")
+    if status == TaskState.succeeded:
         break
     time.sleep(2)
-    n_retries += 1
+    retries += 1
 
 # Get Markdown
-response = instance.post("get_markdown", task_id=task_id)
-markdown = response.data["markdown"]
+markdown = response["markdown"]
 ```
 
 ## Developing

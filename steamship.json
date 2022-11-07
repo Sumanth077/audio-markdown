@@ -1,11 +1,11 @@
 {
-  "type": "app",
+  "type": "package",
   "handle": "audio-markdown",
-  "version": "0.1.1",
+  "version": "0.4.1",
   "public": true,
-  "description": "",
-  "author": "",
-  "entrypoint": "src.api.handler",
+  "description": "This package converts supplied audio files to Markdown, based on a limited set of in-audio prompts.",
+  "author": "Steamship",
+  "entrypoint": "api.handler",
   "build_config": {
     "ignore": ["tests", "notebooks", "examples"]
   },
