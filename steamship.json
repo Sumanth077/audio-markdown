@@ -1,7 +1,7 @@
 {
   "type": "package",
   "handle": "audio-markdown-staging",
-  "version": "0.2.5",
+  "version": "0.3.3",
   "public": true,
   "description": "This package converts supplied audio files to Markdown, based on a limited set of in-audio prompts.",
   "author": "Steamship",

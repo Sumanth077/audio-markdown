@@ -2,32 +2,23 @@
 import base64
 import json
 from pathlib import Path
-from typing import Optional, Type
+from typing import Optional
 
 import requests
 import toml
 from pydantic import HttpUrl
 from steamship import File, MimeTypes
 from steamship.base import Task, TaskState
-from steamship.invocable import Config, Invocable, InvocableResponse, create_handler, post
+from steamship.invocable import InvocableResponse, PackageService, create_handler, post
 
 from transcript_to_markdown import transcript_to_markdown
 
 
-class AudioMarkdownPackage(Invocable):
+class AudioMarkdownPackage(PackageService):
     """Package that transcribes audio to Markdown using in-audio formatting cues."""
 
     BLOCKIFIER_HANDLE = "whisper-s2t-blockifier-staging"
     BLOCKIFIER_INSTANCE_HANDLE = "whisper-s2t-blockifier-staging-instance-001"
-
-    class AudioMarkdownPackageConfig(Config):
-        """Config object containing required configuration parameters to initialize a AudioMarkdownPackage."""
-
-        pass
-
-    def config_cls(self) -> Type[Config]:
-        """Return the Configuration class."""
-        return self.AudioMarkdownPackageConfig
 
     def __init__(self, **kwargs):
         secret_kwargs = toml.load(str(Path(__file__).parent / ".steamship" / "secrets.toml"))
@@ -42,7 +33,7 @@ class AudioMarkdownPackage(Invocable):
             plugin_handle=self.BLOCKIFIER_HANDLE,
             instance_handle=self.BLOCKIFIER_INSTANCE_HANDLE,
             config={"whisper_model": "base", "get_segments": False},
-            reuse=True,
+            fetch_if_exists=True,
         )
 
     @post("transcribe_url")
